@@ -10,13 +10,14 @@ def main():
         else:
             Off()
 
-
 def On():
     for light in range(10):
         cp.pixels[light] = (0, 100, 0)
         time.sleep(.01)
 
 def Off():
-    cp.pixels.fill((0, 0, 0 ))
+    for light in range(10 -1, -1, -1):
+        cp.pixels[light] = (0, 0, 0)
+        time.sleep(.01)
 
 main()
